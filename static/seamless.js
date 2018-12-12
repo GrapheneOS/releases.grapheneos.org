@@ -69,6 +69,8 @@ for (const channel of channels) {
 
             release.appendChild(createLink(factoryUrl, factoryFilename));
             release.appendChild(document.createElement("br"));
+            release.appendChild(createLink(factoryUrl + ".sig", factoryFilename + ".sig"));
+            release.appendChild(document.createElement("br"));
             release.appendChild(createLink(updateUrl, updateFilename));
 
             for (const item of list.children) {
