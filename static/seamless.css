@@ -7,7 +7,10 @@ body {
     color: rgba(0, 0, 0, 0.87); /* 87% black */
     margin: 0;
     padding: 0;
-    overflow-y: scroll;
+}
+
+pre {
+    overflow-x: auto;
 }
 
 a {
