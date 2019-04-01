@@ -108,9 +108,6 @@ TMPDIR="$PWD/tmp" ./flash-all.sh</pre>
             images and before locking the bootloader, you should erase the custom Android Verified
             Boot key to untrust it:</p>
             <pre>fastboot erase avb_custom_key</pre>
-            <p>To confirm that the key is unset, verify that
-            <code>avb_user_settable_key_set</code> is <code>no</code>:</p>
-            <pre>fastboot getvar avb_user_settable_key_set</pre>
             <h2>Stable channel</h2>
             <div id="stable"></div>
             <h2>Beta channel</h2>
