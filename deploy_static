@@ -2,7 +2,7 @@
 
 set -o errexit
 
-remote=root@seamlessupdate.app
+remote=www-data@seamlessupdate.app
 current=$(ssh $remote readlink /var/www/html)
 
 if [[ $current = html_a ]]; then
