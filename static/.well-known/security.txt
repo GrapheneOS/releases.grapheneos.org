@@ -1,1 +1,22 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
 Contact: mailto:security@seamlessupdate.app
+Canonical: https://seamlessupdate.app/.well-known/security.txt
+Preferred-Languages: en
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEZe7+AiEI4rcIy/z3+ecS5Zr18ioFAlzjr9cACgkQ+ecS5Zr1
+8ip2BBAAiiZEzLG2qUqGmrdC4tF5SQ/6LmUyuFfq87rCVis9Z0tl4/HyoNU/ZY50
+wNa5dIRPNDoiQjytwlzBHJCkhfU064uHVGPGvOIA1zH1TyhkRQRy+ickNnpVxr4b
+qqcRRczn+T1UWHRzRc6prHN5ILgkqG7ti2iahDBl4uveiYqQJ8Si5QR2T1eVgVGR
+GpjFnPkZlSFCtC19DpETQJjR4dBNIANz0faB8XnQ6W5Cs3CkoRVZhesBJgX++0lw
+BZ/l323CgBArtiPl9CtzmpUSkK/ZpyIpxaVDuXl8NnWrSCPMifRCA7QDja/wkMWB
+lpOAtx1tyvjSD/VKWU/YeSEmJstkCYdgMkZvmnCMxaoay9cM/zBw+R4HkFhyS4fa
+N1DlGa34NALdtKm0O7je9PnBG8of8JCcZRyi7kzAnwXVzrY2NTuuPmKqgyZqHwzi
+Gg6DDIP2W+RjisXgB41qwKhMk2RSYTw0zoNAPk0MsvoKwx6i7RbqvOXUAez3215y
+BaLcAQGtMlDr0nthCRmQ67ko1gvbEOPrAQqGBc8XjLwKKgzwo8VclxJbVILxk7ut
+AGZXSjYlnW/G5ivEbmU9s+FRJyh1IEHr4y0QpVaJ53artFGskvxPTDBN3NHKej/k
+pHH2EobJDg1n5J3sitg6NZvVrZ4rjvmTJPl4gDzBfZhwO+eiMF0=
+=Hzw6
+-----END PGP SIGNATURE-----
