@@ -1,23 +1,23 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-Contact: mailto:security@seamlessupdate.app
-Canonical: https://seamlessupdate.app/.well-known/security.txt
+Contact: mailto:security@releases.grapheneos.org
+Canonical: https://releases.grapheneos.org/.well-known/security.txt
 Encryption: openpgp4fpr:65EEFE022108E2B708CBFCF7F9E712E59AF5F22A
 Preferred-Languages: en
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEEZe7+AiEI4rcIy/z3+ecS5Zr18ioFAlzk1Z4ACgkQ+ecS5Zr1
-8ioDXw//TJ+DtYyDwW/7tUvRaR1hMO4Pdt8VV6IEYoOO+c6FlNLZOHZyd0021FHY
-hogFiGUgMUqIWBzwfAfaIDOEQVuGXX4tqH3DBxes9Ioq/Ryv6vg5AzfjVvaBbWCr
-HBUHbm2aGQvY3L3eyNbecni9bbBigVepjGcEiQrLkj1TvXj6ZCYGlRFL5rlCVIy9
-/foLvKzt9lhE0L1m+tHuCzydiORN5qFKbFimNKg99xjb0tVqffJ2xGlm0hs61hSV
-tMRyWUOMPUWHnNnkRaXCfTh36DLNUZkhLIDZwCXcx7cNeqheYCdi9w14Hm/Rbj9Y
-/wKn1wQiX8Jg42K+CsfXR36Ay0wSDWnyArg8gcLcQr1ztOLkvheKxR3ScgspJrPT
-DYaYJmyoYR6cDsBudg/cXMDGHhS4hMlj+f7AxxvRwqgpfoXxxX3K93UITlUqBWGe
-KGSYWhNfuD3L0BiI0misX/mbEIpHszQdNmi+ZjxT/vTv6MetdbgaeMWwjJJoCwut
-f2APfxI+A2xRGSFyxzUnhDmS+xhgJGHQWbLSafd0zULK5Eu+pV5KlzzmkutloQ6U
-yXT+wxf6g2ajverRuWhdgE9bW1sO/t8de2FOyRXEDNmN3MpVwpmXm+afYU7XJ5Ot
-SfaacPKyYhC7vNKXcYE3t23k63KZrzljyC0geKAJwTo9F4Wojlk=
-=fxNc
+iQIzBAEBCAAdFiEEZe7+AiEI4rcIy/z3+ecS5Zr18ioFAl0YXwwACgkQ+ecS5Zr1
+8ipUOw/+IUPuZN9J4Js94JtwxhsnhnrkGQ5vZuSmjNceqkCdU+2iNwB8U8Lo1fbp
+IuZ4EXo1vxEZ96F9VxmQ2ztjFi+DBHZqvdlojMeSMTuAdTaRrj1HkJvlKYVW1B0u
+rYhk48O93hMnN9h52Uph9lCUnIGxMKCs9nO1ar0c5Q6x8hRmeLap6xdwhet6vIaP
+M/op39px2OhRr9sC4y3Y7jPEpFcKlYXUw8awmnirDZKRtYNT7iQiWchu0mGJjxKd
+e8KDgj0Y0P0LWVstNEC1vAR99Vxu5Ue5WhF2LaCeqS3xNroCZbxqwVnoJmiDJqIy
+inQfCXTrjwN5UEp884DdXTfiEPGZ1t3uCkbfiCMhuveFwAAcP82UukE8hQrZHsBk
+m3qWACzaD0FYaq3Q/vwLB+mDwVFwBUAdwyH4GBxBubZjs5RVXeEC2lHF/WJSLCM4
+yel/GoEKv1ttrutNx/NXuKbH6eHNmjl3RWDFxEVt3pW9q/zVpF8TeSVbDZXt0uCT
+W0Ezpq6w7vvfyypXJVsdVAJa2STmfOoSgZM9VGaj/Bm2t1+x0hJt92Th71733VzD
+09wPylp+gyoEJhTynZHwW4kOPiReiPRmabQsE5G88oikySJr2zBbyhCV5idI5S2U
+63ji38ylXatfBHXhMUroe9SqLrKcJi7AlFDIIhFt+4dGds1ySTs=
+=7Ubu
 -----END PGP SIGNATURE-----

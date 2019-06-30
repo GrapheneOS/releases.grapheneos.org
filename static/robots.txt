@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://seamlessupdate.app/sitemap.xml
+Sitemap: https://releases.grapheneos.org/sitemap.xml

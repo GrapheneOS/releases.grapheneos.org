@@ -3,7 +3,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://seamlessupdate.app/.well-known/security.txt</loc>
+        <loc>https://releases.grapheneos.org/.well-known/security.txt</loc>
         <priority>0.0</priority>
     </url>
 </urlset>

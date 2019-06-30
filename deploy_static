@@ -2,7 +2,7 @@
 
 set -o errexit
 
-remote=www-data@seamlessupdate.app
+remote=www-data@releases.grapheneos.org
 current=$(ssh $remote readlink html)
 
 if [[ $current = html_a ]]; then
