@@ -1,2 +1,8 @@
 User-agent: *
+
+# sample URLs from usage documentation
+Disallow: /DEVICE-CHANNEL
+Disallow: /DEVICE-incremental-OLD_VERSION-NEW_VERSION.zip
+Disallow: /DEVICE-ota_update-NEW_VERSION.zip
+
 Sitemap: https://releases.grapheneos.org/sitemap.xml
