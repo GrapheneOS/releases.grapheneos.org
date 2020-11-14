@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -o errexit -o nounset -o pipefail
+
+export PATH="$PWD/node_modules/.bin:$PATH"
+
+rm -rf static_tmp
+cp -a static static_tmp
+find static_tmp -name '*.xml' -exec xmllint --noblanks {} --output {} \;
+find static_tmp -regex '.+\.\(ico\|txt\|xml\)' \
+    -exec zopfli {} \; -exec touch -r {} {}.gz \; \
+    -exec brotli -k {} \;

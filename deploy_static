@@ -2,6 +2,9 @@
 
 set -o errexit -o nounset -o pipefail
 
+./validate_static
+./process_static
+
 remote=www-data@releases.grapheneos.org
 active=$(ssh $remote readlink html)
 
@@ -15,7 +18,7 @@ echo active is $active
 echo target is $target
 echo
 
-rsync -rpcv --chmod=D755,F644 --delete static/ $remote:$target
+rsync -rpcv --chmod=D755,F644 --delete static_tmp/ $remote:$target
 ssh $remote sync -f $target
 ssh $remote ln -snf $target html
 ssh $remote sync .

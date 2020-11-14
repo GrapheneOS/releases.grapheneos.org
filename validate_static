@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -o errexit -o nounset -o pipefail
+shopt -s extglob globstar
+
+xmllint --noout static/**/*.xml
