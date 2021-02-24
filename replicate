@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -o errexit -o nounset -o pipefail
+
+primary=root@primary.releases.grapheneos.org
+replicas=(
+    replica1.releases.grapheneos.org
+)
+
+rsync -rpcvl --delete $primary:/etc/ssh replicate_tmp/
+rsync -rpcvl --delete $primary:/etc/letsencrypt replicate_tmp/
+rsync -rpcvl --delete $primary:/var/www/mta-sts replicate_tmp/
+rsync -rpcvl --delete $primary:/var/www/releases replicate_tmp/
+
+for replica in ${replicas[@]}; do
+    echo
+    echo Deploying to $replica
+    echo
+
+    rsync -rpcvl --delete replicate_tmp/ssh/ $replica:/etc/ssh
+    ssh $replica systemctl restart sshd
+
+    rsync -rpcvl --delete replicate_tmp/letsencrypt/ $replica:/etc/letsencrypt
+    ssh $replica systemctl start certbot-ocsp-fetcher.service
+
+    rsync -rpcvl --delete replicate_tmp/mta-sts/ $replica:/var/www/mta-sts
+    rsync -rpcvl --delete replicate_tmp/releases/ $replica:/var/www/releases
+done
