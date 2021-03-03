@@ -7,18 +7,18 @@ replicas=(
     replica1.releases.grapheneos.org
 )
 
-rsync -rptcvl --delete $primary:/etc/letsencrypt replicate_tmp/
-rsync -rptcvl --delete $primary:/var/www/mta-sts replicate_tmp/
-rsync -rptcvl --delete $primary:/var/www/releases replicate_tmp/
+rsync -rptvl --delete $primary:/etc/letsencrypt replicate_tmp/
+rsync -rptvl --delete $primary:/var/www/mta-sts replicate_tmp/
+rsync -rptvl --delete $primary:/var/www/releases replicate_tmp/
 
 for replica in ${replicas[@]}; do
     echo
     echo Deploying to $replica
     echo
 
-    rsync -rptcvl --delete replicate_tmp/letsencrypt/ $replica:/etc/letsencrypt
+    rsync -rptvl --delete replicate_tmp/letsencrypt/ $replica:/etc/letsencrypt
     ssh $replica systemctl start certbot-ocsp-fetcher.service
 
-    rsync -rptcvl --delete replicate_tmp/mta-sts/ $replica:/var/www/mta-sts
-    rsync -rptcvl --delete replicate_tmp/releases/ $replica:/var/www/releases
+    rsync -rptvl --delete replicate_tmp/mta-sts/ $replica:/var/www/mta-sts
+    rsync -rptvl --delete replicate_tmp/releases/ $replica:/var/www/releases
 done
