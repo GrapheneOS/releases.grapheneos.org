@@ -15,12 +15,12 @@ for server in ${servers[@]}; do
 
     remote=root@$server
 
-    active=$(ssh $remote readlink /var/www/html)
+    active=$(ssh $remote readlink /srv/releases.grapheneos.org)
 
-    if [[ $active = /var/www/html_a ]]; then
-        target=/var/www/html_b
+    if [[ $active = /srv/releases.grapheneos.org_a ]]; then
+        target=/srv/releases.grapheneos.org_b
     else
-        target=/var/www/html_a
+        target=/srv/releases.grapheneos.org_a
     fi
 
     echo active is $active
@@ -31,7 +31,7 @@ for server in ${servers[@]}; do
     ssh $remote cp -a $active $target
     rsync -rpcv --chmod=D755,F644 --delete static_tmp/ $remote:$target
     ssh $remote sync -f $target
-    ssh $remote ln -snf $target /var/www/html
+    ssh $remote ln -snf $target /srv/releases.grapheneos.org
     ssh $remote sync .
 
     echo
