@@ -9,7 +9,7 @@ replicas=(
 
 rsync -rptvl --delete $primary:/etc/letsencrypt replicate_tmp/
 rsync -rptvl --delete $primary:/srv/mta-sts replicate_tmp/
-rsync -rptvl --delete $primary:/var/www/releases replicate_tmp/
+rsync -rptvl --delete $primary:/srv/releases replicate_tmp/
 
 for replica in ${replicas[@]}; do
     echo
@@ -20,5 +20,5 @@ for replica in ${replicas[@]}; do
     ssh $replica systemctl start certbot-ocsp-fetcher.service
 
     rsync -rptvl --delete replicate_tmp/mta-sts/ $replica:/srv/mta-sts
-    rsync -rptvl --delete replicate_tmp/releases/ $replica:/var/www/releases
+    rsync -rptvl --delete replicate_tmp/releases/ $replica:/srv/releases
 done
