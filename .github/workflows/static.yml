@@ -16,7 +16,7 @@ jobs:
     - run: sudo apt-get -y install libxml2-utils yajl-tools moreutils brotli zopfli
 
     - name: validate static
-      run: ./validate_static
+      run: ./validate-static
 
     - name: process static
-      run: ./process_static
+      run: ./process-static
