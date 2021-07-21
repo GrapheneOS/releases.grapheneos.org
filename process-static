@@ -11,6 +11,5 @@ for file in static_tmp/**/*.@(json|webmanifest); do
 done
 
 find static_tmp -name '*.xml' -exec xmllint --noblanks {} --output {} \;
-find static_tmp -regex '.+\.\(ico\|json\|txt\|xml\)' \
-    -exec zopfli {} \; -exec touch -r {} {}.gz \; \
-    -exec brotli -k {} \;
+find static_tmp -regex '.+\.\(ico\|json\|txt\|xml\)' |
+    parallel "brotli -k {}; zopfli {} && touch -r {} {}.gz"
