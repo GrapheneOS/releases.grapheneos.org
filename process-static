@@ -10,6 +10,11 @@ for file in static_tmp/**/*.@(json|webmanifest); do
     json_reformat -m < "$file" | sponge "$file"
 done
 
+brotli_k() {
+    brotli -k "$@"
+}
+export -f brotli_k
+
 find static_tmp -name '*.xml' -exec xmllint --noblanks {} --output {} \;
 find static_tmp -regex '.+\.\(ico\|json\|txt\|xml\)' |
-    parallel "brotli -k {}; zopfli {}"
+    parallel -q ::: brotli_k zopfli :::: -
