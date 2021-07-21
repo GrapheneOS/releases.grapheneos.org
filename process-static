@@ -12,4 +12,4 @@ done
 
 find static_tmp -name '*.xml' -exec xmllint --noblanks {} --output {} \;
 find static_tmp -regex '.+\.\(ico\|json\|txt\|xml\)' |
-    parallel "brotli -k {}; zopfli {} && touch -r {} {}.gz"
+    parallel "brotli -k {}; zopfli {}"
