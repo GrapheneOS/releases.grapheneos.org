@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -o errexit -o nounset -o pipefail
+
+replicas=(
+    replica1.releases.grapheneos.org
+)
+
+for replica in ${replicas[@]}; do
+    echo
+    echo Deploying to $replica
+    echo
+
+    rsync -rptvl --progress --delete /etc/letsencrypt/ $replica:/etc/letsencrypt
+    ssh $replica systemctl start certbot-ocsp-fetcher.service
+done
