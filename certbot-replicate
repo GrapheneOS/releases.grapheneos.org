@@ -12,5 +12,6 @@ for replica in ${replicas[@]}; do
     echo
 
     rsync -rptvl --progress --delete /etc/letsencrypt/ $replica:/etc/letsencrypt
-    ssh $replica systemctl start certbot-ocsp-fetcher.service
+    rsync -rptvl --progress --delete /etc/nginx/ocsp-cache/ $replica:/etc/nginx/ocsp-cache
+    ssh root@$replica nginx -s reload
 done
