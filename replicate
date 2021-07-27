@@ -7,7 +7,6 @@ replicas=(
     replica1.releases.grapheneos.org
 )
 
-rsync -rptvl --progress --delete $primary:/srv/mta-sts replicate_tmp/
 rsync -rptvl --progress --delete $primary:/srv/releases replicate_tmp/
 
 for replica in ${replicas[@]}; do
@@ -15,6 +14,5 @@ for replica in ${replicas[@]}; do
     echo Deploying to $replica
     echo
 
-    rsync -rptvl --progress --delete replicate_tmp/mta-sts/ $replica:/srv/mta-sts
     rsync -rptvl --progress --delete replicate_tmp/releases/ $replica:/srv/releases
 done
