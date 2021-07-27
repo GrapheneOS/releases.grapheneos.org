@@ -12,5 +12,5 @@ for replica in ${servers[@]}; do
     echo Deploying to $replica
     echo
 
-    rsync -rptvl --progress --delete releases/ $replica:/srv/releases
+    rsync -rptv --progress --delete releases/ $replica:/srv/releases
 done
