@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -o errexit -o nounset -o pipefail
+
+servers=(
+    primary.releases.grapheneos.org
+    replica1.releases.grapheneos.org
+)
+
+for replica in ${servers[@]}; do
+    echo
+    echo Deploying to $replica
+    echo
+
+    rsync -rptvl --progress --delete releases/ $replica:/srv/releases
+done
