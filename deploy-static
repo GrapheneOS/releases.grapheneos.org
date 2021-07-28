@@ -14,7 +14,6 @@ for server in ${servers[@]}; do
     echo $server
 
     remote=root@$server
-
     active=$(ssh $remote readlink /srv/releases.grapheneos.org)
 
     if [[ $active = /srv/releases.grapheneos.org_a ]]; then
