@@ -5,10 +5,7 @@ set -o errexit -o nounset -o pipefail
 ./validate-static
 ./process-static
 
-servers=(
-    0.releases.grapheneos.org
-    1.releases.grapheneos.org
-)
+. servers.sh
 
 for server in ${servers[@]}; do
     echo $server

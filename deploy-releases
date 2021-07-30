@@ -2,10 +2,7 @@
 
 set -o errexit -o nounset -o pipefail
 
-servers=(
-    0.releases.grapheneos.org
-    1.releases.grapheneos.org
-)
+. servers.sh
 
 for replica in ${servers[@]}; do
     echo
