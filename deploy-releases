@@ -3,8 +3,8 @@
 set -o errexit -o nounset -o pipefail
 
 servers=(
-    primary.releases.grapheneos.org
-    replica1.releases.grapheneos.org
+    0.releases.grapheneos.org
+    1.releases.grapheneos.org
 )
 
 for replica in ${servers[@]}; do

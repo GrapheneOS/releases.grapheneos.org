@@ -6,8 +6,8 @@ set -o errexit -o nounset -o pipefail
 ./process-static
 
 servers=(
-    primary.releases.grapheneos.org
-    replica1.releases.grapheneos.org
+    0.releases.grapheneos.org
+    1.releases.grapheneos.org
 )
 
 for server in ${servers[@]}; do
