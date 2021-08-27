@@ -5,4 +5,6 @@ servers=(
     3.releases.grapheneos.org
     4.releases.grapheneos.org
     5.releases.grapheneos.org
+    6.releases.grapheneos.org
+    7.releases.grapheneos.org
 )
