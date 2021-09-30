@@ -3,10 +3,10 @@
 set -o errexit -o nounset -o pipefail
 shopt -s dotglob extglob globstar
 
-rm -rf static_tmp
-cp -a static static_tmp
+rm -rf static-tmp
+cp -a static static-tmp
 
-for file in static_tmp/**/*.@(json|webmanifest); do
+for file in static-tmp/**/*.@(json|webmanifest); do
     json_reformat -m < "$file" | sponge "$file"
 done
 
@@ -21,6 +21,6 @@ zopfli_preserve_time() {
 }
 export -f zopfli_preserve_time
 
-find static_tmp -name '*.xml' -exec xmllint --noblanks {} --output {} \;
-find static_tmp -regex '.+\.\(ico\|json\|txt\|xml\)' |
+find static-tmp -name '*.xml' -exec xmllint --noblanks {} --output {} \;
+find static-tmp -regex '.+\.\(ico\|json\|txt\|xml\)' |
     parallel -q ::: brotli_k zopfli_preserve_time :::: -
