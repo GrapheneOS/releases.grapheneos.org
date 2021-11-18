@@ -6,7 +6,7 @@ shopt -s dotglob extglob globstar
 rm -rf static-tmp
 cp -a static static-tmp
 
-for file in static-tmp/**/*.@(json|webmanifest); do
+for file in static-tmp/**/*.json; do
     json_reformat -m < "$file" | sponge "$file"
 done
 
