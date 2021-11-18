@@ -1,4 +1,4 @@
-name: Validate and process static files
+name: Process static files
 
 on: [pull_request, push]
 
@@ -11,9 +11,6 @@ jobs:
 
     - run: sudo apt-get update
     - run: sudo apt-get -y install libxml2-utils yajl-tools moreutils brotli zopfli
-
-    - name: validate static
-      run: ./validate-static
 
     - name: process static
       run: ./process-static
