@@ -23,5 +23,5 @@ zopfli_preserve_time() {
 export -f zopfli_preserve_time
 
 find static-tmp -name '*.xml' -exec xmllint --noblanks {} --output {} \;
-find static-tmp -regex '.+\.\(ico\|json\|txt\|xml\)' |
+find static-tmp -regex '.+\.\(ico\|json\|svg\|txt\|xml\)' |
     parallel -q ::: brotli_k zopfli_preserve_time :::: -
