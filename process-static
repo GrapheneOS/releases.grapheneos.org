@@ -3,6 +3,9 @@
 set -o errexit -o nounset -o pipefail
 shopt -s dotglob extglob globstar
 
+rm -rf nginx-tmp
+cp -a nginx nginx-tmp
+
 rm -rf static-tmp
 cp -a static static-tmp
 
@@ -10,6 +13,11 @@ for file in static-tmp/**/*.json; do
     json_verify < "$file" >/dev/null
     json_reformat -m < "$file" | sponge "$file"
 done
+
+# temporarily disabled for GitHub Actions due to unresolved compatibility issue
+if [[ ${GITHUB_ACTIONS:-false} != true ]]; then
+    gixy nginx-tmp/nginx.conf
+fi
 
 brotli_k() {
     brotli -k "$@"
