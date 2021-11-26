@@ -14,10 +14,7 @@ for file in static-tmp/**/*.json; do
     json_reformat -m < "$file" | sponge "$file"
 done
 
-# temporarily disabled for GitHub Actions due to unresolved compatibility issue
-if [[ ${GITHUB_ACTIONS:-false} != true ]]; then
-    gixy nginx-tmp/nginx.conf
-fi
+gixy nginx-tmp/nginx.conf
 
 brotli_k() {
     brotli -k "$@"
