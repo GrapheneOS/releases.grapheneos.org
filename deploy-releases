@@ -9,5 +9,5 @@ for replica in ${servers[@]}; do
     echo Deploying to $replica
     echo
 
-    rsync -rptv --chmod=D755,F644 --progress --delete releases/ $replica:/srv/releases
+    rsync -rptv --fsync --chmod=D755,F644 --progress --delete releases/ $replica:/srv/releases
 done
