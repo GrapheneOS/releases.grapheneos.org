@@ -2,10 +2,11 @@
 types {
     text/html                                        html htm shtml;
     text/css                                         css;
+    text/javascript                                  js mjs;
     text/xml                                         xml;
     image/gif                                        gif;
     image/jpeg                                       jpeg jpg;
-    application/javascript                           js;
+    application/wasm                                 wasm;
     application/atom+xml                             atom;
     application/rss+xml                              rss;
 
@@ -30,6 +31,7 @@ types {
     application/java-archive                         jar war ear;
     application/json                                 json;
     application/mac-binhex40                         hqx;
+    application/manifest+json                        webmanifest;
     application/msword                               doc;
     application/pdf                                  pdf;
     application/postscript                           ps eps ai;
