@@ -18,6 +18,8 @@ fi
 rm -rf nginx-tmp
 cp -a nginx nginx-tmp
 
+gixy nginx-tmp/nginx.conf
+
 rm -rf static-tmp
 cp -a static static-tmp
 
@@ -25,8 +27,6 @@ for file in static-tmp/**/*.json; do
     json_verify < "$file" >/dev/null
     json_reformat -m < "$file" | sponge "$file"
 done
-
-gixy nginx-tmp/nginx.conf
 
 brotli_k() {
     brotli -k "$@"
