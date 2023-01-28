@@ -1,5 +1,5 @@
-nginx-tmp
-releases
-static-tmp
-lock
-venv
+/nginx-tmp/
+/releases/
+/static-tmp/
+/lock
+/venv
