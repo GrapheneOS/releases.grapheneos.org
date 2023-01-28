@@ -10,10 +10,4 @@ fi
 
 . servers.sh
 
-for replica in ${servers[@]}; do
-    echo
-    echo Deploying to $replica
-    echo
-
-    rsync -rptv --fsync --chmod=D755,F644 --progress --delete releases/ $replica:/srv/releases
-done
+parallel "rsync -rptv --fsync --chmod=D755,F644 --progress --delete releases/ {}:/srv/releases 2>&1 >logs/{}" ::: ${servers[@]}
