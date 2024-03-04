@@ -2,5 +2,6 @@
 /logs/
 /nginx-tmp/
 /releases/
+/static-deploy/
 /static-tmp/
 /venv/
