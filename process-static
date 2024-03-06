@@ -32,12 +32,6 @@ for file in static-tmp/**/*.json; do
     json_reformat -m < "$file" | sponge "$file"
 done
 
-zopfli_preserve_time() {
-    zopfli "$1"
-    touch -r "$1" "$1.gz"
-}
-export -f zopfli_preserve_time
-
 find static-tmp -name '*.xml' -exec xmllint --noblanks {} --output {} \;
 find static-tmp -regex '.+\.\(ico\|json\|svg\|txt\|xml\)' |
-    parallel -q ::: brotli zopfli_preserve_time :::: -
+    parallel -q ::: brotli zopfli :::: -
