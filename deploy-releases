@@ -10,6 +10,6 @@ fi
 
 . servers.sh
 
-rm logs/*
+rm -f logs/*.log
 parallel "rsync -rptv --chmod=D755,F644 --progress --delete --fsync --preallocate releases/ {}:/srv/releases 2>&1 >logs/{}.log" ::: ${servers[@]}
 tail -n +1 logs/*.log
