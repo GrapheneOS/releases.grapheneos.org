@@ -3,7 +3,7 @@
 set -o errexit -o nounset -o pipefail
 
 status=0
-replicas=({1..7}.releases.grapheneos.org)
+replicas=({1..8}.releases.grapheneos.org)
 
 for replica in ${replicas[@]}; do
     echo
