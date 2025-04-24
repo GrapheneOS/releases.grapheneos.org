@@ -17,7 +17,7 @@ fi
 rsync -pcv --chmod=F755 --fsync --preallocate certbot-replicate root@${servers[0]}:/usr/local/bin/
 rsync -pcv --chmod=F644 --fsync --preallocate replicate.conf root@${servers[0]}:/etc/systemd/system/certbot-renew.service.d/
 
-# use last modified timestamps from 0.releases.grapheneos.org
+# use last modified timestamps from 4.releases.grapheneos.org
 rsync -rptcv --chmod=D755,F644 --delete --fsync --preallocate root@${servers[0]}:/srv/releases.grapheneos.org/ static-production
 rsync -rpcv --chmod=D755,F644 --delete --fsync --preallocate static-tmp/ static-production
 for f in static-production/**.*(br|gz); do
