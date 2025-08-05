@@ -1,1 +1,1 @@
-servers=({4..6}.releases.grapheneos.org)
+servers=({0..2}.releases.grapheneos.org)
