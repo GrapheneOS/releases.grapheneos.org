@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+
+import json
+
+devices = "comet", "komodo", "caiman", "tokay", "akita", "husky", "shiba", "felix", "tangorpro", "lynx", "cheetah", "panther", "bluejay", "raven", "oriole", "barbet", "redfin", "bramble", "sunfish", "coral", "flame"
+channels = "stable", "beta", "alpha"
+
+releases = {}
+
+for device in devices:
+    for channel in channels:
+        with open("releases/" + device + "-" + channel) as metadata:
+            releases.setdefault(device, {})[channel] = metadata.read().split(" ")[0]
+
+with open("overview.json", "w") as output:
+    json.dump(releases, output, separators=(',', ':'))

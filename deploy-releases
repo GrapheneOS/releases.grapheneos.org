@@ -11,5 +11,13 @@ fi
 . servers.sh
 
 rm -f logs/*.log
+
+rm -f overview.json overview.json.br overview.json.gz
+./generate-overview
+brotli overview.json
+zopfli overview.json
+rsync -c overview.json{,.br,.gz} releases/
+rm overview.json overview.json.br overview.json.gz
+
 parallel "rsync -rptv --chmod=D755,F644 --progress --delete --fsync --preallocate releases/ {}:/srv/releases 2>&1 >logs/{}.log" ::: ${servers[@]}
 tail -n +1 logs/*.log
