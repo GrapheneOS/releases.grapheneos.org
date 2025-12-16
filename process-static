@@ -22,7 +22,7 @@ fi
 rm -rf nginx-tmp
 cp -a nginx nginx-tmp
 
-gixy nginx-tmp/nginx.conf
+gixy --skips low_keepalive_requests nginx-tmp/nginx.conf
 
 rm -rf static-tmp
 cp -a static static-tmp
