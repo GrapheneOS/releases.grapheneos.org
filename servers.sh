@@ -1,1 +1,1 @@
-servers=({lax,lon,mia,yto}.releases.grapheneos.org)
+servers=({lax,mia,yto}.releases.grapheneos.org)
