@@ -14,11 +14,9 @@ fi
 
 . servers.sh
 
-remote=root@mia.releases.grapheneos.org
+remote=root@mia.grapheneos.org
 
-rsync -pcv --chmod=F644 --fsync --preallocate mirrors $remote:/etc/mirrors
-
-# use last modified timestamps from mia.releases.grapheneos.org
+# use last modified timestamps from mia.grapheneos.org
 rsync -rptcv --chmod=D755,F644 --delete --fsync --preallocate $remote:/srv/releases.grapheneos.org/ static-production
 rsync -rpcv --chmod=D755,F644 --delete --fsync --preallocate static-tmp/ static-production
 for f in static-production/**.*(br|gz); do
@@ -46,7 +44,7 @@ for server in ${servers[@]}; do
     ssh $remote "ln -snf $target /srv/releases.grapheneos.org && sync /srv/releases.grapheneos.org"
 
     echo "root $target;" > nginx-tmp/root_releases.grapheneos.org.conf
-    rsync -pcv --chmod=644 --fsync --preallocate nginx-tmp/{nginx.conf,mime.types,root_releases.grapheneos.org.conf,security-headers-releases.conf} $remote:/etc/nginx/
+    rsync -pcv --chmod=644 --fsync --preallocate nginx-tmp/{root_releases.grapheneos.org.conf,releases.conf,security-headers-releases.conf} $remote:/etc/nginx/
     ssh $remote systemctl reload nginx
 
     echo

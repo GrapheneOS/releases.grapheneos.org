@@ -1,3 +1,4 @@
+# this configuration file is only used to check the releases.conf configuration with gixy-ng
 
 types {
     text/html                                        html htm shtml;
