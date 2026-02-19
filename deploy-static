@@ -14,9 +14,9 @@ fi
 
 . servers.sh
 
-remote=root@mia.grapheneos.org
+remote=root@yto.grapheneos.org
 
-# use last modified timestamps from mia.grapheneos.org
+# use last modified timestamps from yto.grapheneos.org
 rsync -rptcv --chmod=D755,F644 --delete --fsync --preallocate $remote:/srv/releases.grapheneos.org/ static-production
 rsync -rpcv --chmod=D755,F644 --delete --fsync --preallocate static-tmp/ static-production
 for f in static-production/**.*(br|gz); do
