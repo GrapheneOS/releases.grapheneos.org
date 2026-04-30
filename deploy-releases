@@ -19,5 +19,5 @@ zopfli overview.json
 rsync -c overview.json{,.br,.gz} releases/
 rm overview.json overview.json.br overview.json.gz
 
-parallel "rsync -rptv --chmod=D755,F644 --progress --delete --fsync --preallocate releases/ {}:/srv/releases 2>&1 >logs/{}.log" ::: ${servers[@]}
+parallel "rsync -rptv --chmod=D755,F644 --progress --delete --fsync --preallocate releases/ {}:/srv/releases >logs/{}.log 2>&1" ::: ${servers[@]}
 tail -n +1 logs/*.log
