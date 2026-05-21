@@ -2,7 +2,7 @@
 
 import json
 
-devices = "rango", "mustang", "blazer", "frankel", "comet", "komodo", "caiman", "tokay", "akita", "husky", "shiba", "felix", "tangorpro", "lynx", "cheetah", "panther", "bluejay", "raven", "oriole", "barbet", "redfin", "bramble", "sunfish", "coral", "flame"
+devices = "rango", "mustang", "blazer", "frankel", "comet", "komodo", "caiman", "tokay", "akita", "husky", "shiba", "felix", "tangorpro", "lynx", "cheetah", "panther", "bluejay", "raven", "oriole"
 channels = "stable", "beta", "alpha"
 
 releases = {}
